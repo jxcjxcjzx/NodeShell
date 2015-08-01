@@ -1,0 +1,54 @@
+// you can either write it 
+// in js or py 
+
+var LexStandard = {
+	// some lex standard notes 
+	
+};
+
+
+var YaccStandard = {
+	// some yacc standard notes 
+	
+};
+
+var Lex = {};
+
+var Yacc = {};
+
+
+ function in(instream){
+	
+	// return a stream for analyse 
+ }
+ 
+ function out(){
+	// output the stream after parse
+ 
+ }
+ 
+ function word_analyse(Lex){
+	// the param Lex is a word-analyser 
+	
+ }
+ 
+ function sentence_analyse(Yacc){
+	// the param Yacc is a sentence-analyser
+ 
+ }
+ 
+ function returnIfNoError(){
+ 
+ }
+ 
+ function popWordParseError(){
+ 
+ }
+ 
+  function popSentenceParseError(){
+ 
+ }
+ 
+ in(stream).word_analyse(new Lex()).popWordParseError().returnIfNoError().sentence_analyse(new Yacc()).popSentenceParseError().returnIfNoError().out();
+ 
+ 
