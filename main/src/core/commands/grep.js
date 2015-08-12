@@ -65,7 +65,7 @@ function inner_test(){
 	
 	// console.log(CONSTS.flags);
 	
-	SHARED.exec("grep -R Caller ./");
+	SHARED.exec("grep -R environment ./");
 	// SHARED.exec("grep -C 4 -R helloworld ./");
 	
 	
@@ -111,9 +111,11 @@ function listdirs(_dir,handleforeachfile){
 }
 
 
+// well, actually some files will not need to be searched, 
+// for example : there will be one dir not need to be enter to 
+// exec searching task, so a filter now is required
 
-
-function loadfilesandsearch(filename,keyword){
+function loadfilesandsearch(filename,keyword/*filter*/){
 	
 	// add some regex match later 
 	// special deal in . addr temporarily 
@@ -194,6 +196,7 @@ SHARED.params2cases = function(params){
 
 SHARED.exec = function(param){
 	
+	// console.log(" exec in grep  ");
 	var params = SHARED.cmd2params(param);
 	SHARED.params2cases(params);
 	// use the exec then 
@@ -223,6 +226,8 @@ function call(func,param){
 
 module.exports = {
 
-	inner_test : inner_test
+	inner_test : inner_test,
+	
+	exec : SHARED.exec
 
 }
